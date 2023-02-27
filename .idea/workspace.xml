@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0fd91360-c12b-4aae-a550-ce4bc11fa6a4" name="Changes" comment="frist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cucumber/Features/shop-account-edit.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cucumber/Features/shop-account-edit.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pl/shop/ShopPageObjectSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/shop/ShopPageObjectSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/pl/shop/ShopPageObjectSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pl/shop/ShopPageObjectSteps.class" afterDir="false" />
     </list>
@@ -68,19 +67,19 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/Programy Java/Coders Lab/ObronaCodersLab/src/test/resources",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Programy Java/Coders Lab/ObronaCodersLab/src/test/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="pl.shop" />
@@ -95,7 +94,7 @@
       <recent name="D:\Programy Java\Coders Lab\ObronaCodersLab\src\test\resources\driverss" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: User adds  address email and password to the account">
+  <component name="RunManager" selected="Cucumber Java.Feature: shop-account-edit (1)">
     <configuration name="Feature: Shop-account-edit" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/Cucamber/Features/Shop-account-edit.feature" />
@@ -190,8 +189,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Scenario: User adds  address email and password to the account" />
         <item itemvalue="Cucumber Java.Feature: shop-account-edit (1)" />
+        <item itemvalue="Cucumber Java.Scenario: User adds  address email and password to the account" />
         <item itemvalue="Cucumber Java.Feature: shop-account-edit" />
         <item itemvalue="JUnit.GoogleSearch" />
         <item itemvalue="Cucumber Java.Feature: Shop-account-edit" />

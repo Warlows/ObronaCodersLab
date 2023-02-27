@@ -46,16 +46,23 @@ public class ShopPageObjectSteps {
 
     @And("I open my address page")
     public void iOpenMyAddressPage() {
-        driver.findElement(By.id("address-link")).click();
+
+        driver.findElement(By.xpath("//*[@id=\"addresses-link\"]/span/i")).click();
+        driver.findElement(By.xpath("//*[@id=\"address-32322\"]/div[2]/a[1]/span")).click();
     }
 
     @And("I enter new address (.+),(.+),(.+),(.+),(.+),(.+)$")
     public void iEnterNewAddress(String Alias, String Address, String City, String Postal_code, String Country, String Phone) {
+        driver.findElement(By.name("alias")).clear();
         driver.findElement(By.name("alias")).sendKeys(Alias);
+        driver.findElement(By.name("address1")).clear();
         driver.findElement(By.name("address1")).sendKeys(Address);
+        driver.findElement(By.name("city")).clear();
         driver.findElement(By.name("city")).sendKeys(City);
+        driver.findElement(By.name("postcode")).clear();
         driver.findElement(By.name("postcode")).sendKeys(Postal_code);
         driver.findElement(By.name("id_country")).sendKeys(Country);
+        driver.findElement(By.name("phone")).clear();
         driver.findElement(By.name("phone")).sendKeys(Phone);
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/form/footer/button")).click();
 
