@@ -9,6 +9,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import java.time.Duration;
@@ -27,7 +30,7 @@ public class ShopPageObjectSteps {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
 
-        driver.get("https://mystore-testlab.coderslab.pl");
+        driver.get("https://mystore-testlab.coderslab.pl");  //wchodzę na stronę my store
 
 
     }
@@ -35,11 +38,11 @@ public class ShopPageObjectSteps {
    @When("I sign in")
     public void signIn() {
         driver.findElement(By.className("user-info")).click();
-   }
+   }  // klikam w signIN
 
 
     @And("I login using (.+) and (.+)$")
-    public void iLoginUsingAnd(String email, String password) {
+    public void iLoginUsingAnd(String email, String password) {      // logowanie za pomocą emaila i hasła
         ShopLoginPage loginPage = new ShopLoginPage(driver);
         loginPage.loginAs("jin4ster.pr1@gmail.com", "terakonia84");
     }
@@ -47,8 +50,9 @@ public class ShopPageObjectSteps {
     @And("I open my address page")
     public void iOpenMyAddressPage() {
 
-        driver.findElement(By.xpath("//*[@id=\"addresses-link\"]/span/i")).click();
-        driver.findElement(By.xpath("//*[@id=\"address-32322\"]/div[2]/a[1]/span")).click();
+        driver.findElement(By.xpath("//*[@id=\"addresses-link\"]/span/i")).click(); //klik w adres
+       // driver.findElement(By.xpath("//*[@id=\"address-32322\"]/div[2]/a[1]/span")).click(); // klik w zmiana adresu
+        driver.findElement(By.xpath("//*[@id=\"content\"]/div[3]/a/span")).click(); // klik nowy adres
     }
 
     @And("I enter new address (.+),(.+),(.+),(.+),(.+),(.+)$")
@@ -65,6 +69,7 @@ public class ShopPageObjectSteps {
         driver.findElement(By.name("phone")).clear();
         driver.findElement(By.name("phone")).sendKeys(Phone);
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/form/footer/button")).click();
+        // wypelnienie formulaza z wczesnijeszym czyszczeniem pol
 
     }
 
@@ -73,17 +78,22 @@ public class ShopPageObjectSteps {
     public void iCanSeeSuccessMessageWhitText(String msgText) {
         WebElement alert = driver.findElement(By.cssSelector(".alert.alert-success"));
         assertTrue(alert.isDisplayed());
-        assertEquals(msgText, alert.getText());
+        assertEquals(msgText, alert.getText());  //sprawdzanie porpawnosci danych asercjami
     }
 
     @And("I delete new address")
     public void iDeleteNewAddress() {
-        driver.findElement(By.xpath("//*[@id=\"address-32322\"]/div[2]/a[2]/span")).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='address-32344']/div[2]/a[2]")));
+        driver.findElement(By.xpath("//*[@id='address-32344']/div[2]/a[2]")).click();
     }
 
-    @And("I can see new address delete*")
-    public void iCanSeeNewAddressDelete() {
-        driver.findElement(By.xpath("//*[@id=\"content\"]"));
+
+    @And("I close Shop browser")
+    public void iCloseShopBrowser() {
+        WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds(5));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"content\"]/div[3]")));
+        driver.quit();
     }
 }
 
