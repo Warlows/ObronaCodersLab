@@ -35,10 +35,10 @@ public class ShopPageObjectSteps {
 
     }
 
-   @When("I sign in")
+    @When("I sign in")
     public void signIn() {
         driver.findElement(By.className("user-info")).click();
-   }  // klikam w signIN
+    }  // klikam w signIN
 
 
     @And("I login using (.+) and (.+)$")
@@ -51,7 +51,7 @@ public class ShopPageObjectSteps {
     public void iOpenMyAddressPage() {
 
         driver.findElement(By.xpath("//*[@id=\"addresses-link\"]/span/i")).click(); //klik w adres
-       // driver.findElement(By.xpath("//*[@id=\"address-32322\"]/div[2]/a[1]/span")).click(); // klik w zmiana adresu
+        // driver.findElement(By.xpath("//*[@id=\"address-32322\"]/div[2]/a[1]/span")).click(); // klik w zmiana adresu
         driver.findElement(By.xpath("//*[@id=\"content\"]/div[3]/a/span")).click(); // klik nowy adres
     }
 
@@ -76,25 +76,37 @@ public class ShopPageObjectSteps {
 
     @Then("I can see success message whit text {string}")
     public void iCanSeeSuccessMessageWhitText(String msgText) {
-        WebElement alert = driver.findElement(By.cssSelector(".alert.alert-success"));
+        WebElement alert = driver.findElement(By.cssSelector("alert-success"));
         assertTrue(alert.isDisplayed());
         assertEquals(msgText, alert.getText());  //sprawdzanie porpawnosci danych asercjami
+
     }
 
-    @And("I delete new address")
-    public void iDeleteNewAddress() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='address-32344']/div[2]/a[2]")));
-        driver.findElement(By.xpath("//*[@id='address-32344']/div[2]/a[2]")).click();
+//    @And("I delete new address")
+//    public void iDeleteNewAddress() {
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+//        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("fog")));
+//        WebElement deleteButton = driver.findElement(By.cssSelector("Delete"));
+//        deleteButton.click();
+//    }
+//
+//
+//        @And("New adress is delete")
+//        public void newAdressIsDelete (String msgText1){
+//            WebElement alert = driver.findElement(By.cssSelector(".alert.alert-success"));
+//            assertTrue(alert.isDisplayed());
+//            assertEquals(msgText1, alert.getText());
+//            // Asercja sprawdzająca, czy adres został usunięty
+//        boolean isAddressDeleted = driver.findElements(By.cssSelector("Alias02")).isEmpty();
+//        assertTrue(isAddressDeleted);
+//        }
+
+//        @And("I close Shop browser")
+//        public void iCloseShopBrowser () {
+//            driver.close();
+//        }
     }
 
 
-    @And("I close Shop browser")
-    public void iCloseShopBrowser() {
-        WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds(5));
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"content\"]/div[3]")));
-        driver.quit();
-    }
-}
 
 

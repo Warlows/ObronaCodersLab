@@ -10,7 +10,8 @@ Feature: User Login it the shop and edit account
     And I enter new address <Alias>, <Address>, <City>, <Postal_code>,<Country>, <Phone>
     Then I can see success message whit text "Your data has been created."
 #    And I delete new address
-    And I close Shop browser
+#    And New adress is delete
+#    And I close Shop browser
 
     Examples:
       |Alias     |Address   |City   |Postal_code |Country         |Phone         |
