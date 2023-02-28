@@ -1,8 +1,8 @@
 @shop
-Feature: User Login it the shop and edit account
+Feature: User Login on the shop and add new address
 
 
-  Scenario Outline: User adds  address email and password to the account
+  Scenario Outline: User add new address on the account
     Given I'm on the shop main page
     When I sign in
     And I login using "jin4ster.pr1@gmail.com" and "terakonia84"

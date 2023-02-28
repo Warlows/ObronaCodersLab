@@ -35,13 +35,13 @@ public class ShopPageObjectSteps {
 
     }
 
-    @When("I sign in")
+    @And("I sign in")
     public void signIn() {
         driver.findElement(By.className("user-info")).click();
     }  // klikam w signIN
 
 
-    @And("I login using (.+) and (.+)$")
+    @When("I login using (.+) and (.+)$")
     public void iLoginUsingAnd(String email, String password) {      // logowanie za pomocą emaila i hasła
         ShopLoginPage loginPage = new ShopLoginPage(driver);
         loginPage.loginAs("jin4ster.pr1@gmail.com", "terakonia84");
