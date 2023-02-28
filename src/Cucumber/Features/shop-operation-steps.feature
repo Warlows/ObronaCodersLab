@@ -1,16 +1,17 @@
-@Operation
+
 Feature:User Login on the shop and operation
 
   Scenario Outline:Shop account operation
 
-    Given I'm on the main page
-    And I sign in to account
-    When I login  "jin4ster.pr1@gmail.com" and "terakonia84"
-    And On the site i search Hummingbird Printed Sweater
-    And I check if the discount is active
-    Then I chose the size and quantity
+    Given On the login page
+    And I login  "jin4ster.pr1@gmail.com" and "terakonia84"
+    When I user page i go clothes
+    And  I click Hummingbird printed sweater
+    Then I chose the <Size> and <Quantity>
     And Add to cart
-    Then I go to checkout and confirm the address
-    And I chose the payment method and option
+    Then go steps on buy
+    And Click
     And I click order whit and doing a print screen
     Examples:
+    |Size |Quantity |
+    |M    |5        |

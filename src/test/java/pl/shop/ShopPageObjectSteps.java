@@ -74,9 +74,9 @@ public class ShopPageObjectSteps {
     }
 
 
-    @Then("I can see success message whit text {string}")
-    public void iCanSeeSuccessMessageWhitText(String msgText) {
-        WebElement alert = driver.findElement(By.cssSelector("alert-success"));
+    @Then("success message with text {string}")
+    public void successMessageWithText(String msgText) {
+        WebElement alert = driver.findElement(By.cssSelector("alert.alert-success"));
         assertTrue(alert.isDisplayed());
         assertEquals(msgText, alert.getText());  //sprawdzanie porpawnosci danych asercjami
 
@@ -100,7 +100,7 @@ public class ShopPageObjectSteps {
 //        boolean isAddressDeleted = driver.findElements(By.cssSelector("Alias02")).isEmpty();
 //        assertTrue(isAddressDeleted);
 //        }
-
+//
 //        @And("I close Shop browser")
 //        public void iCloseShopBrowser () {
 //            driver.close();
