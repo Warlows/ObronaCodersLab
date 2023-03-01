@@ -8,8 +8,11 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.imageio.ImageIO;
+import java.io.File;
 import java.time.Duration;
 import java.util.Map;
 
@@ -42,27 +45,54 @@ public class OperationObjectSteps {
     }
 
     @Then("I chose the (.+) and (.+)$")
-    public void iChoseTheSizeAndQuantity(String Size, String Quantity) {
-        driver.findElement(By.name("group[1]")).sendKeys(Size);
-        driver.findElement(By.xpath("//*[@id=\"quantity_wanted\"]")).clear();
-        driver.findElement(By.xpath("//*[@id=\"quantity_wanted\"]")).sendKeys(Quantity);
+    public void iChoseTheSizeAndQuantity(String size, String quantity) {
+        WebElement sizeElement = driver.findElement(By.id("group_1"));
+        Select sizeDrop = new Select(sizeElement);
+        sizeDrop.selectByVisibleText(size);    // Ustawienie elementu rozmiar
+        WebElement quantityInput = driver.findElement(By.id("quantity_wanted"));
+        quantityInput.clear();
+        quantityInput.sendKeys(quantity);
+//        driver.findElement(By.name("value")).clear();
+//        driver.findElement(By.name("value")).sendKeys(Quantity);
+
 
     }
 
     @And("Add to cart")
     public void addToCart() {
-        driver.findElement(By.name("submit")).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("add")));
+        driver.findElement(By.className("add")).click(); // dodajemy do koszyka
     }
 
     @Then("go steps on buy")
     public void goStepsOnBuy() {
-        driver.findElement(By.name("btn btn-primary")).click();
-        driver.findElement(By.name("btn btn-primary")).click();
+        WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(4));  //czekam na dogranie
+        wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"blockcart-modal\"]/div/div/div[2]/div/div[2]/div/div/a"))).click();
+        // klikam checkout
+        wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"main\"]/div/div[2]/div[1]/div[2]/div/a"))).click();
+        // klikam checkot pomownie
         driver.findElement(By.name("confirm-addresses")).click();
+        // potwierddzam adrress
         driver.findElement(By.name("confirmDeliveryOption")).click();
-        driver.findElement(By.name("payment-option-1")).click();
-        driver.findElement(By.name("conditions_to_approve")).click();
-        driver.findElement(By.name("btn btn-primary center-block")).click();
+        // potwierdzam typ dostawy
+        driver.findElement(By.id("payment-option-1")).click();
+        // wybieram forme płatności
 
+
+    }
+
+    @And("I doing a screenshot")
+    public void iDoingAScreenshot() throws Exception{
+        File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        //wykonuje printa
+        ImageIO.write(ImageIO.read(screenshot), "PNG", new File("D:\\Programy Java\\Coders Lab\\ObronaCodersLab\\Screen"));
+    }
+
+    @And("Confirm buy")
+    public void confirmBuy() {
+        driver.findElement(By.id("conditions_to_approve")).click();  //potwierdzenie umowy
+        driver.findElement(By.xpath("//*[@id=\"payment-confirmation\"]/div[1]/button")).click();
+        // potwierdzenie kupna
     }
 }

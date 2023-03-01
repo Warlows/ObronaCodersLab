@@ -11,7 +11,7 @@ Feature: User Login on the shop and add new address
     Then success message with text "Address successfully added!"
 #    And I delete new address
 #    And New adress is delete
-#    And I close Shop browser
+
 
     Examples:
       | Alias   | Address | City   | Postal_code | Country        | Phone       |

@@ -84,7 +84,7 @@ public class ShopPageObjectSteps {
 
 //    @And("I delete new address")
 //    public void iDeleteNewAddress() {
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
 //        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("fog")));
 //        WebElement deleteButton = driver.findElement(By.cssSelector("Delete"));
 //        deleteButton.click();
@@ -100,11 +100,7 @@ public class ShopPageObjectSteps {
 //        boolean isAddressDeleted = driver.findElements(By.cssSelector("Alias02")).isEmpty();
 //        assertTrue(isAddressDeleted);
 //        }
-//
-//        @And("I close Shop browser")
-//        public void iCloseShopBrowser () {
-//            driver.close();
-//        }
+
     }
 
 

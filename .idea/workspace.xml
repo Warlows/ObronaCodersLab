@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fd91360-c12b-4aae-a550-ce4bc11fa6a4" name="Changes" comment="frist">
-      <change afterPath="$PROJECT_DIR$/out.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/shop/OperationObjectSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out.html" beforeDir="false" afterPath="$PROJECT_DIR$/out.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cucumber/Features/shop-account-edit.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cucumber/Features/shop-account-edit.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cucumber/Features/shop-operation-steps.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cucumber/Features/shop-operation-steps.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/shop/CucumberRunnTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/shop/CucumberRunnTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/shop/ShopOperation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/shop/OperationObjectSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/shop/OperationObjectSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pl/shop/ShopPageObjectSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/shop/ShopPageObjectSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/shop/ShopPageObjectSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pl/shop/ShopPageObjectSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pl/shop/OperationObjectSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pl/shop/OperationObjectSteps.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +103,7 @@
       <recent name="D:\Programy Java\Coders Lab\ObronaCodersLab\src\test\resources\driverss" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CucumberRunnTest (2)">
+  <component name="RunManager" selected="JUnit.CucumberRunnTest">
     <configuration name="Feature: shop-account-edit" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/Cucumber/Features/shop-account-edit.feature" />
@@ -203,11 +201,11 @@
       <item itemvalue="Cucumber Java.Feature: shop-operation-steps" />
       <item itemvalue="Cucumber Java.Scenario: Shop account operation" />
       <item itemvalue="Cucumber Java.Scenario: User add new address on the account (1)" />
-      <item itemvalue="JUnit.CucumberRunnTest (2)" />
+      <item itemvalue="JUnit.CucumberRunnTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CucumberRunnTest (2)" />
+        <item itemvalue="JUnit.CucumberRunnTest" />
         <item itemvalue="Cucumber Java.Feature: shop-operation-steps" />
         <item itemvalue="Cucumber Java.Scenario: Shop account operation" />
         <item itemvalue="Cucumber Java.Feature: shop-account-edit" />

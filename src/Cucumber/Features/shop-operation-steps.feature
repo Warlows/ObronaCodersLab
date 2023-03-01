@@ -7,11 +7,11 @@ Feature:User Login on the shop and operation
     And I login  "jin4ster.pr1@gmail.com" and "terakonia84"
     When I user page i go clothes
     And  I click Hummingbird printed sweater
-    Then I chose the <Size> and <Quantity>
+    Then I chose the <size> and "<quantity>"
     And Add to cart
     Then go steps on buy
-    And Click
-    And I click order whit and doing a print screen
+    And I doing a screenshot
+    And Confirm buy
     Examples:
-    |Size |Quantity |
+    |size |quantity |
     |M    |5        |
