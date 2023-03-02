@@ -82,7 +82,8 @@ public class ShopPageObjectSteps {
         WebElement alert = driver.findElement
                 (By.xpath("//*[@id=\"notifications\"]/div/article/ul/li"));
         assertTrue(alert.isDisplayed());
-        assertEquals(msgText, alert.getText());  //sprawdzanie porpawnosci danych asercjami
+        assertEquals(msgText, alert.getText());
+        //sprawdzanie porpawnosci danych asercjami
 
     }
 
@@ -90,7 +91,7 @@ public class ShopPageObjectSteps {
 //    public void iDeleteNewAddress() {
 //        WebDriverWait lookWait = new WebDriverWait(driver, Duration.ofSeconds(4));
 //        lookWait.until(ExpectedConditions.visibilityOfElementLocated
-//                (By.name("Aliassa")));
+//                (By.cssSelector(".alert.alert-success")));
 //        WebElement deleteButton = driver.findElement(By.name("delete-address"));
 //        deleteButton.click();
 //    }

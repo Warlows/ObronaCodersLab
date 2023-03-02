@@ -25,12 +25,14 @@ public class OperationObjectSteps {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://mystore-testlab.coderslab.pl/index.php?controller=authentication&back=my-account");
+        // logowanie na strone
     }
 
     @And("I login  (.+) and (.+)$")
     public void iLogIN(String email, String password) {
         ShopLoginPage loginPages = new ShopLoginPage(driver);
         loginPages.loginAs("jin4ster.pr1@gmail.com", "terakonia84");
+        //zalogowanie na profil urzytkownika
 
     }
 
@@ -38,10 +40,12 @@ public class OperationObjectSteps {
     public void iUserPageIGoClothes() {
         driver.findElement(By.id("category-3")).click();
     }
+    // wejscie w zakładke cloth
 
     @And("I click Hummingbird printed sweater")
     public void iClickHummingbirdPrintedSweater() {
         driver.findElement(By.xpath("//*[@id=\"js-product-list\"]/div[1]/div[2]/article/div/div[1]/a/img")).click();
+        // wybranie swetra
     }
 
     @Then("I chose the (.+) and (.+)$")
@@ -49,9 +53,18 @@ public class OperationObjectSteps {
         WebElement sizeElement = driver.findElement(By.id("group_1"));
         Select sizeDrop = new Select(sizeElement);
         sizeDrop.selectByVisibleText(size);    // Ustawienie elementu rozmiar
-        WebElement quantityInput = driver.findElement(By.id("quantity_wanted"));
-        quantityInput.clear();
-        quantityInput.sendKeys(quantity);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        //WebElement quantityInput = driver.findElement(By.id("quantity_wanted"));
+        WebElement quantityInput = driver.findElement(By.cssSelector("input[type='number'][value='1']"));
+        quantityInput.sendKeys(Keys.DELETE);
+        quantityInput.sendKeys(String.valueOf(quantity));
+        //WebDriverWait clearVeit = new WebDriverWait(driver, Duration.ofSeconds(4));
+        //clearVeit.wait(By.cssSelector("input[type='number'][value='1']"));
+        // Ustawienie ilosci sztuk
 //        driver.findElement(By.name("value")).clear();
 //        driver.findElement(By.name("value")).sendKeys(Quantity);
 
