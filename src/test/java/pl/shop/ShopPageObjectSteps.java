@@ -76,7 +76,11 @@ public class ShopPageObjectSteps {
 
     @Then("success message with text {string}")
     public void successMessageWithText(String msgText) {
-        WebElement alert = driver.findElement(By.cssSelector("alert.alert-success"));
+        WebDriverWait look = new WebDriverWait(driver, Duration.ofSeconds(4));
+        look.until(ExpectedConditions.visibilityOfElementLocated
+                (By.xpath("//*[@id=\"notifications\"]/div/article/ul/li")));
+        WebElement alert = driver.findElement
+                (By.xpath("//*[@id=\"notifications\"]/div/article/ul/li"));
         assertTrue(alert.isDisplayed());
         assertEquals(msgText, alert.getText());  //sprawdzanie porpawnosci danych asercjami
 
@@ -84,9 +88,10 @@ public class ShopPageObjectSteps {
 
 //    @And("I delete new address")
 //    public void iDeleteNewAddress() {
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
-//        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("fog")));
-//        WebElement deleteButton = driver.findElement(By.cssSelector("Delete"));
+//        WebDriverWait lookWait = new WebDriverWait(driver, Duration.ofSeconds(4));
+//        lookWait.until(ExpectedConditions.visibilityOfElementLocated
+//                (By.name("Aliassa")));
+//        WebElement deleteButton = driver.findElement(By.name("delete-address"));
 //        deleteButton.click();
 //    }
 //

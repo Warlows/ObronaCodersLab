@@ -82,17 +82,22 @@ public class OperationObjectSteps {
 
     }
 
-    @And("I doing a screenshot")
+    @Then("I doing a screenshot")
     public void iDoingAScreenshot() throws Exception{
-        File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         //wykonuje printa
-        ImageIO.write(ImageIO.read(screenshot), "PNG", new File("D:\\Programy Java\\Coders Lab\\ObronaCodersLab\\Screen"));
+        ImageIO.write(ImageIO.read(screenshot), "PNG", new File
+                ("D:\\Programy Java\\Coders Lab\\ObronaCodersLab\\print"));
     }
 
     @And("Confirm buy")
     public void confirmBuy() {
-        driver.findElement(By.id("conditions_to_approve")).click();  //potwierdzenie umowy
-        driver.findElement(By.xpath("//*[@id=\"payment-confirmation\"]/div[1]/button")).click();
+        WebDriverWait lastWeit = new WebDriverWait(driver,Duration.ofSeconds(4));
+        driver.findElement(By.xpath("//*[@id=\"conditions_to_approve[terms-and-conditions]\"]")).click();
+        //potwierdzenie umowy
+        lastWeit.until(ExpectedConditions.visibilityOfElementLocated(By.xpath
+                ("//*[@id=\"payment-confirmation\"]/div[1]/button"))).click();
         // potwierdzenie kupna
     }
 }
